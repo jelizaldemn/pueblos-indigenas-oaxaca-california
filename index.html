@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Created by Jose Luis Elizalde -->
+  <meta name="author" content="Jose Luis Elizalde">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidades Indígenas Oaxaqueñas en California</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-group">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="Oaxaca Indigenous Communities logo">
+          <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="3" fill="currentColor"/>
+          <line x1="16" y1="2" x2="16" y2="30" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+          <line x1="2" y1="16" x2="30" y2="16" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        </svg>
+        <span class="logo-text">Pueblos Indígenas de Oaxaca en California</span>
+      </div>
+      <div class="header-controls">
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="language" aria-label="View by language">Por Lengua</button>
+          <button class="view-btn" data-view="region" aria-label="View by region of origin">Por Región de Origen</button>
+          <button class="view-btn" data-view="california" aria-label="View by California region">Por Región en California</button>
+        </div>
+        <button data-theme-toggle aria-label="Toggle theme" class="theme-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Comunidades Indígenas Oaxaqueñas en California</h1>
+      <p class="subtitle">Aproximadamente <strong>350,000</strong> personas de origen indígena oaxaqueño viven en California, hablando más de 15 lenguas originarias. Esta visualización muestra la distribución por lengua, región de origen en Oaxaca y destino en California.</p>
+    </section>
+
+    <section class="chart-section">
+      <div class="chart-controls">
+        <div class="legend" id="legend"></div>
+      </div>
+      <div class="chart-container" id="chart"></div>
+      <div class="tooltip" id="tooltip"></div>
+    </section>
+
+    <section class="stats-bar" id="statsBar"></section>
+
+    <section class="map-section">
+      <div class="map-header">
+        <h2>Distribución Geográfica en California</h2>
+        <p class="map-subtitle">Presencia estimada de comunidades indígenas oaxaqueñas por condado</p>
+      </div>
+      <div class="map-wrapper">
+        <div class="map-container" id="caMap"></div>
+        <div class="map-legend" id="mapLegend">
+          <div class="map-legend-title">Población estimada</div>
+        </div>
+      </div>
+      <div class="map-tooltip" id="mapTooltip"></div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Fuentes de Datos</h3>
+          <p>Datos compilados del Indigenous Farmworker Study (IFS), National Center for Farmworker Health (NCFH), U.S. Census 2000-2020, MICOP, Fresno Bee, y estudios académicos de UC Berkeley y UC Santa Cruz. Las cifras representan estimaciones basadas en múltiples fuentes, dado el sub-conteo significativo en censos oficiales.</p>
+        </div>
+        <div class="info-card">
+          <h3>Sobre esta Comunidad</h3>
+          <p>Las comunidades indígenas oaxaqueñas representan la población de trabajadores agrícolas de más rápido crecimiento en California. Muchos hablan únicamente su lengua indígena, sin español ni inglés, creando barreras únicas de comunicación y acceso a servicios.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Datos compilados de fuentes públicas incluyendo IFS, NCFH, Census 2020, MICOP y estudios académicos</p>
+    <span>Created by Jose Luis Elizalde</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
