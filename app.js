@@ -803,7 +803,7 @@ function drawMap(container, topoData, mapTooltip) {
             showMapTooltip(event, name, info, mapTooltip);
             d3.select(this).raise();
         })
-        .on("mousemove", event => positionMapTooltipevent, mapTooltip)
+                    .on("mousemove", event => positionMapTooltip(event, mapTooltip))
         .on("mouseleave", () => mapTooltip.classList.remove("visible"));
 
     buildMapLegend(baseColors, darkColors);
@@ -819,7 +819,7 @@ function drawMap(container, topoData, mapTooltip) {
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
 }
 
-function showMapTooltipevent, countyName, info, tooltip {
+function showMapTooltip(event, countyName, info, tooltip) {
     let html = `<div class="map-tooltip-title">${countyName}</div>`;
     if (info) {
         const regionDetail = getRegionDetail(info.region);
@@ -834,10 +834,10 @@ function showMapTooltipevent, countyName, info, tooltip {
     }
     tooltip.innerHTML = html;
     tooltip.classList.add("visible");
-    positionMapTooltipevent, tooltip;
+            positionMapTooltip(event, tooltip);
 }
 
-function positionMapTooltipevent, tooltip {
+function positionMapTooltip(event, tooltip) {
     const pad = 16;
     let x = event.clientX + pad;
     let y = event.clientY + pad;
